@@ -18,9 +18,10 @@
 
         .quiz-container {
             max-width: 800px;
-            margin: auto;
+            margin: 0 auto;
             padding: 20px;
         }
+
 
         .header {
             text-align: center;
@@ -36,32 +37,58 @@
     <div id="app">
         <v-app>
             <div class="header">แบบทดสอบ คณิตศาสตร์</div>
-            <div class="quiz-container">
-                <v-container>
-                    <div v-if="page === 1">
-                        <v-btn class="bg-yellow-darken-1" @click="loadQuiz('quiz2.json')">
-                            <v-icon left>mdi-play-circle</v-icon> เริ่มทำแบบทดสอบ
-                        </v-btn>
-                    </div>
-                    <div v-else-if="page === 2">
-                        <div v-for="(question, index) in questions" :key="index" class="my-4">
-                            <h3>ข้อที่ {{ index + 1 }}</h3>
-                            <div v-html="question.title"></div>
-                            <v-radio-group v-model="answers[index]" row>
-                                <v-radio v-for="(option, i) in question.options" :key="i" :label="option" :value="i + 1">
-                                </v-radio>
-                            </v-radio-group>
-                        </div>
-                        <v-btn class="mt-4" color="success" :disabled="!isComplete()" @click="submitAnswers">
-                            ตรวจคำตอบ
-                        </v-btn>
-                    </div>
-                    <div v-else-if="page === 3">
-                        <h2>คุณได้คะแนน {{ score }} จาก {{ questions.length }} คะแนน</h2>
-                        <v-btn color="primary" @click="page = 1">ทำแบบทดสอบใหม่</v-btn>
-                    </div>
-                </v-container>
-            </div>
+            <v-container>
+                <div v-if="page === 1">
+                    <v-container fluid fill-height>
+                        <v-row justify="center" align="center" class="fill-height">
+                            <v-col cols="auto">
+                                <v-btn class="bg-yellow-darken-1" @click="loadQuiz('quiz2.json')">
+                                    <v-icon left>mdi-play-circle</v-icon> เริ่มทำแบบทดสอบ
+                                </v-btn>
+                            </v-col>
+                        </v-row>
+                    </v-container>
+                </div>
+                
+                <div v-else-if="page === 2">
+                    <v-row>
+                        <v-col cols="12" sm="8" md="6" class="mx-auto">
+                            <div v-for="(question, index) in questions" :key="index" class="my-4">
+                                <v-card class="pa-4" outlined>
+                                    <h3 class="text-left">ข้อที่ {{ index + 1 }}</h3>
+                                    <div v-html="question.title" class="text-left mb-3"></div>
+                                    <v-radio-group v-model="answers[index]" row>
+                                        <v-radio v-for="(option, i) in question.options" :key="i" :label="option" :value="i + 1">
+                                        </v-radio>
+                                    </v-radio-group>
+                                </v-card>
+                            </div>
+                            <v-container fluid fill-height>
+                                <v-row justify="center" align="center" class="fill-height">
+                                    <v-col cols="auto">
+                                        <v-btn class="mt-4" color="success" :disabled="!isComplete()" @click="submitAnswers">
+                                            ตรวจคำตอบ
+                                        </v-btn>
+                                    </v-col>
+                                </v-row>
+                            </v-container>
+                            
+                        </v-col>
+                    </v-row>
+                </div>
+                
+                <div v-else-if="page === 3">
+                    <v-container fluid fill-height>
+                        <v-row justify="center" align="center" class="fill-height">
+                            <v-col cols="auto" class="text-center pa-4">
+                                <h2 class="mb-4">คุณได้คะแนน {{ score }} จาก {{ questions.length }} คะแนน</h2>
+                                <v-btn color="primary" @click="page = 1" class="mt-4">ทำแบบทดสอบใหม่</v-btn>
+                            </v-col>
+                        </v-row>
+                    </v-container>
+                </div>                
+                
+            </v-container>
         </v-app>
     </div>
 
