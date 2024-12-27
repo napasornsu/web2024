@@ -22,12 +22,52 @@
             padding: 20px;
         }
 
-
         .header {
             text-align: center;
-            padding: 20px;
+            padding: 30px; /* Reduced padding */
             background-color: #ff9800;
             color: white;
+            font-size: 2rem; /* Reduced font size */
+            font-weight: 700;
+            border-bottom: 5px solid #ff5722;
+            transition: background-color 0.3s ease;
+        }
+
+        .header:hover {
+            background-color: #ff5722;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem; /* Reduced font size for h1 */
+        }
+
+        .btn-animated {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-animated:hover {
+            transform: scale(1.1);
+        }
+
+        .v-btn {
+            font-size: 1.1rem;
+        }
+
+        .v-card {
+            transition: box-shadow 0.3s ease;
+        }
+
+        .v-card:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .v-radio-group .v-radio {
+            transition: background-color 0.3s ease;
+        }
+
+        .v-radio-group .v-radio:hover {
+            background-color: rgba(255, 138, 0, 0.1);
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&display=swap" rel="stylesheet">
@@ -36,13 +76,16 @@
 <body>
     <div id="app">
         <v-app>
-            <div class="header">แบบทดสอบ คณิตศาสตร์ง่ายมากๆ</div>
+            <div class="header">
+                <h1>แบบทดสอบ คณิตศาสตร์ง่ายมากๆ</h1>
+                <!-- <div>ทดสอบความสามารถด้านคณิตศาสตร์ของคุณในแบบที่สนุกสนาน</div> -->
+            </div>
             <v-container>
                 <div v-if="page === 1">
                     <v-container fluid fill-height>
                         <v-row justify="center" align="center" class="fill-height">
                             <v-col cols="auto">
-                                <v-btn class="bg-yellow-darken-1" @click="loadQuiz('quiz2.json')">
+                                <v-btn class="bg-yellow-darken-1 btn-animated" @click="loadQuiz('quiz2.json')">
                                     <v-icon left>mdi-play-circle</v-icon> เริ่มทำแบบทดสอบ
                                 </v-btn>
                             </v-col>
@@ -66,7 +109,7 @@
                             <v-container fluid fill-height>
                                 <v-row justify="center" align="center" class="fill-height">
                                     <v-col cols="auto">
-                                        <v-btn class="mt-4" color="success" :disabled="!isComplete()" @click="submitAnswers">
+                                        <v-btn class="mt-4 btn-animated" color="success" :disabled="!isComplete()" @click="submitAnswers">
                                             ตรวจคำตอบ
                                         </v-btn>
                                     </v-col>
@@ -82,7 +125,7 @@
                         <v-row justify="center" align="center" class="fill-height">
                             <v-col cols="auto" class="text-center pa-4">
                                 <h2 class="mb-4">คุณได้คะแนน {{ score }} จาก {{ questions.length }} คะแนน</h2>
-                                <v-btn color="primary" @click="page = 1" class="mt-4">ทำแบบทดสอบใหม่</v-btn>
+                                <v-btn class="btn-animated" color="primary" @click="page = 1" class="mt-4">ทำแบบทดสอบใหม่</v-btn>
                             </v-col>
                         </v-row>
                     </v-container>

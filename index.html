@@ -1,22 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SC310006</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #7C4DFF, #FFFFFF); /* ม่วงเข้มและขาว */
+            color: #000000; /* ดำ */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #4A148C; /* ม่วงเข้ม */
+            font-size: 2.6rem;
+            margin-bottom: 50px;
+            border-bottom: 3px solid #D1C4E9; /* ม่วงอ่อน */
+            padding-bottom: 10px;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        li {
+            margin: 20px 0;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            color: #FFFFFF;
+            background: linear-gradient(45deg, #7C4DFF, #6A1B9A); /* ม่วงสด */
+            padding: 15px 20px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: background 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
+        }
+
+        a:hover {
+            background: linear-gradient(45deg, #6A1B9A, #7C4DFF); /* พลิกสีม่วง */
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            margin-top: 60px;
+            font-size: 1rem;
+            text-align: center;
+            color: #4A148C; /* ม่วงเข้ม */
+        }
+
+        footer span {
+            font-weight: bold;
+            color: #9C27B0; /* ม่วงสด */
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+        }
+    </style>
 </head>
 
-<html>
-  <body>
+<body>
     <h1>
-      วิชา SC310006 Mobile and Web Application Development
+        วิชา SC310006 Mobile and Web Application Development 💻📱
     </h1>
     <ul>
-      <li><a href="./work/work1/work1.html">งานที่ 1</a></li>
-      <li><a href="./work/work2/work2.html">งานที่ 2</a></li>
-      <li>งานที่ 3</li>
+        <li><a href="./work/work1/work1.html">งานที่ 1 📚</a></li>
+        <li><a href="./work/work2/work2.html">งานที่ 2 ✨</a></li>
+        <li><a href="./work/work3/work3.html">งานที่ 3 📝</a></li>
     </ul>
-    โดย นางสาวนภสร สุบงกช 653380133-3 sec1
-  </body>
+    <footer>
+        โดย <span>นางสาวนภสร สุบงกช</span> 653380133-3 sec1 🧑‍🎓
+    </footer>
+</body>
+
 </html>
