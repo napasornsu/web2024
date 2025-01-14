@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>VR-360 Introduction</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.2/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- ฉากหลังแบบ 360 -->
+      <a-sky src="./asset/nighaurora.jpg"></a-sky>
+
+      <!-- โมเดลแทนตัวเอง -->
+      <a-entity gltf-model="./asset/Witch1.glb" position="0 0 -4" scale="0.5 0.5 0.5" animation-mixer></a-entity>
+
+      <!-- พื้นหลังข้อความ -->
+       <a-plane position="0.5 3.3 -3" width="5" height="2" color="#000" opacity="0.7"></a-plane>
+
+      <!-- ข้อความแนะนำตัว -->
+      <a-text value="Hello, I'm Napasorn Subongkotch.
+      I am a Computer Science student.
+      My student ID is 653380133-3.
+      I am studying in the course 
+      SC310006: Mobile and Web Application Development 2/2567.
+      I am interested in learning about game and app development."  
+        position="-1.5 3.2 -3" 
+        color="#FFFFFF" 
+        width="4" >
+      </a-text>
+
+      <!-- วัตถุที่มี Animation -->
+      <a-entity gltf-model="./asset/WitchBroom.glb"
+      position="1 0.5 -3" 
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 5000">
+    </a-entity>
+
+      <!-- แสงและพื้น -->
+      <a-light type="directional" position="1 2 3"></a-light>
+      <!-- <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="#7BC8A4"></a-plane> -->
+
+      <!-- House Model -->
+      <a-entity gltf-model="./asset/Chalet.glb" 
+      position="0 -10 -1"  >
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
