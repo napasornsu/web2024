@@ -6,22 +6,56 @@
   </head>
   <body>
     <a-scene>
+      
       <!-- ฉากหลังแบบ 360 -->
       <a-sky src="./asset/nighaurora.jpg"></a-sky>
 
       <!-- โมเดลแทนตัวเอง -->
       <a-entity gltf-model="./asset/Witch1.glb" position="0 0 -4" scale="0.5 0.5 0.5" animation-mixer></a-entity>
 
+      <!-- โมเดลสุนัขที่กระโดด -->
+      <a-entity gltf-model="./asset/dog.glb" position="-3.5 -1 -1.5" scale="0.005 0.005 0.005" animation="property: position; to: -3.5 0 -1.5; dir: alternate; dur: 1000; loop: true" rotation="0 180 0"></a-entity>
+
+      <!-- ข้อความ "I like Dog!" -->
+      <a-text value="I like Dog!" 
+        position="-3 1.5 -1" 
+        color="#FFFFFF" 
+        width="4" 
+        align="center" 
+        font="https://cdn.aframe.io/fonts/Roboto-msdf.json"
+        rotation="0 70 0">
+      </a-text>
+      <a-plane position="-3 1.5 -1" width="1" height="1" color="#663399" opacity="0.7" rotation="0 70 0"></a-plane>
+
+      <!-- ข้อความ "I like to eat chocolate!" -->
+      <a-text value="I like to eat chocolate!!" 
+        position="3.5 1.5 -1" 
+        color="#FFFFFF" 
+        width="4" 
+        align="center" 
+        font="https://cdn.aframe.io/fonts/Roboto-msdf.json"
+        rotation="0 -70 0">
+      </a-text>
+      <a-plane position="3.5 1.5 -1" width="2.5" height="1" color="#663399" opacity="0.7" rotation="0 -70 0"></a-plane>
+
+      <!-- โมเดลช็อคโกแลต -->
+      <a-entity gltf-model="./asset/sweet_chocombo.glb" position="3.9 -1 -1" scale="0.01 0.01 0.01" ></a-entity>
+
+      <!-- แสง -->
+      <a-light id="light" type="directional" position="1 2 3" intensity="1.5"></a-light>
+      
+      <!-- เสียงประกอบ -->
+      <a-sound src="url(./asset/supercutecats.mp3)" autoplay="true" loop="true" position="0 1 0" id="sound" volume="0.15"></a-sound>
+
       <!-- พื้นหลังข้อความ -->
-       <a-plane position="0.5 3.3 -3" width="5" height="2" color="#000" opacity="0.7"></a-plane>
+       <a-plane position="0.3 3.3 -3" width="4" height="1.5" color="#663399" opacity="0.7"></a-plane>
 
       <!-- ข้อความแนะนำตัว -->
       <a-text value="Hello, I'm Napasorn Subongkotch.
       I am a Computer Science student.
+      I am a student at KKU.
       My student ID is 653380133-3.
-      I am studying in the course 
-      SC310006: Mobile and Web Application Development 2/2567.
-      I am interested in learning about game and app development."  
+      I am interested in learning about game,app and web development."  
         position="-1.5 3.2 -3" 
         color="#FFFFFF" 
         width="4" >
@@ -31,16 +65,17 @@
       <a-entity gltf-model="./asset/WitchBroom.glb"
       position="1 0.5 -3" 
       animation="property: rotation; to: 0 360 0; loop: true; dur: 5000">
-    </a-entity>
+      </a-entity>
 
       <!-- แสงและพื้น -->
       <a-light type="directional" position="1 2 3"></a-light>
       <!-- <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="#7BC8A4"></a-plane> -->
 
       <!-- House Model -->
-      <a-entity gltf-model="./asset/Chalet.glb" 
-      position="0 -10 -1"  >
+      <a-entity gltf-model="./asset/witchs_cottage.glb" 
+      position="0 -5 -25"  >
       </a-entity>
+      
     </a-scene>
   </body>
 </html>
